@@ -1,4 +1,5 @@
 <div><img src="./src/logo.svg" width="200"></div>
+
 ## GraphQL-react
 
 In the project directory, you can run:
