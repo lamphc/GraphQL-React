@@ -15,10 +15,14 @@ import { gql } from 'apollo-boost';
 const GH = gql`
     query ViewerQuery {
       viewer {
-        repositories(name: "react") {
-          id
-          name
-          diskUsage
+        login,
+        repositories(first: 100) {
+          nodes {
+            name,
+           licenseInfo {
+             id
+           }
+          }
         }
      }
     }
@@ -28,7 +32,20 @@ function Index() {
   const { loading, data } = useQuery(GH);
   console.log(data)
   if (loading) return <h1>loading...</h1>;
-  else return <h2>{data.viewer.login}</h2>
+  const { viewer: { login, repositories: { nodes } } } = data;
+  return (
+    <div>
+      <h1>{login}</h1>
+      <ul>
+        {
+          nodes.map((item) => {
+            return <p key={item.name}>{item.name}</p>
+          })
+        }
+      </ul>
+    </div>
+  )
+
 
 
   // const { loading, error, data } = useQuery(EXCHANGE_RATES);
