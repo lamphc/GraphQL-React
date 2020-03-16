@@ -8,6 +8,7 @@ import client from './graphql';
 // github配置
 import client_github from './graphql/github'
 import Index from './pages/Index';
+import Hook from './pages/Hook';
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
 
-          <Index />
-
+          {/* <Index /> */}
+          <Hook />
           <a
             className="App-link"
             href="https://reactjs.org"
