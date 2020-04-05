@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-
+// // 查询条件
 // const EXCHANGE_RATES = gql`
 //   {
 //     rates(currency: "USD") {
@@ -11,6 +11,21 @@ import { gql } from 'apollo-boost';
 //     }
 //   }
 // `;
+
+// function Index() {
+//   const { loading, error, data } = useQuery(EXCHANGE_RATES);
+
+//   if (loading) return <p>Loading...</p>;
+//   if (error) return <p>Error :(</p>;
+
+//   return data.rates.map(({ currency, rate }) => (
+//     <div key={currency}>
+//       <p>
+//         {currency}: {rate}
+//       </p>
+//     </div>
+//   ));
+// }
 
 const GH = gql`
     query ViewerQuery {
@@ -27,7 +42,7 @@ const GH = gql`
      }
     }
 `;
-// 支持函数组件
+
 function Index() {
   const { loading, data } = useQuery(GH);
   console.log(data)

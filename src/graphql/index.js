@@ -15,6 +15,7 @@ export default client;
 //       {
 //         rates(currency: "USD") {
 //           currency
+//           rate
 //         }
 //       }
 //     `

@@ -4,7 +4,7 @@ import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import gql from 'graphql-tag';
 
-const token = "8c5a1d4972d761f0c289323b76d0ac49619a7ba7";
+const token = "084a47a13b2c3c1a3ad8a03d1f18da34fa236b4e";
 
 const authLink = setContext((_, { headers }) => {
   return {
@@ -23,14 +23,14 @@ const client = new ApolloClient({
 export default client
 
 // invoke
-// client.query({
-//   query: gql`
-//     query ViewerQuery {
-//       viewer {
-//         login
-//      }
-//     }
-//   `
-// })
-//   .then(resp => console.log(resp.data.viewer.login))
-//   .catch(error => console.error(error));
+client.query({
+  query: gql`
+    query ViewerQuery {
+      viewer {
+        login
+     }
+    }
+  `
+})
+  .then(resp => console.log(resp))
+  .catch(error => console.error(error));
