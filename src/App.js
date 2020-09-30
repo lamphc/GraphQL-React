@@ -1,18 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/react-hooks'
 // 示例配置
-import client from './graphql';
+import client from './graphql'
 // github配置
 import client_github from './graphql/github'
-import Index from './pages/Index';
+// 页面
+import Index from './pages/Index'
 // import Hook from './pages/Hook';
 
-function App() {
+function App () {
   return (
     // 配置react hook
+    // <ApolloProvider client={client}>
     <ApolloProvider client={client_github}>
       <div className="App">
         <header className="App-header">
@@ -31,7 +33,7 @@ function App() {
         </header>
       </div>
     </ApolloProvider>
-  );
+  )
 }
 
-export default App;
+export default App
